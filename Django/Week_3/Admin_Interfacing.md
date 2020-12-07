@@ -35,3 +35,21 @@
 ```sh
 $ python manage.py migrate
 ```
+- syncdb will create necessary tables or collections depending on your db type, necessary for the admin interface to run. Even if you don't have a superuser, you will be prompted to create one.
+
+- If you already have a superuser or have forgotten it, you can always create one using the following code 
+```sh
+$ python manage.py createsuperuser
+```
+- **Configuring myproject/url.py for Admin Interface.The url.py should be like the code given below:**
+  ```sh
+  from django.conf.urls import patterns, include, url
+
+  from django.contrib import admin
+  admin.autodiscover()
+
+  urlpatterns = patterns('',
+  url(r'^admin/', include(admin.site.urls)),
+  )
+
+  ```
