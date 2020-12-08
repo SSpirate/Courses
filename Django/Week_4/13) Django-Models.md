@@ -8,9 +8,16 @@
   - Example For Model is given below:
       ```sh
       from django.db import models
-      class Person(models.Model):
-      first_name = models.CharField(max_length=30)
-      last_name = models.CharField(max_length=30)
+
+      class Dreamreal(models.Model):
+
+      website = models.CharField(max_length = 50)
+      mail = models.CharField(max_length = 50)
+      name = models.CharField(max_length = 50)
+      phonenumber = models.IntegerField()
+
+      class Meta:
+          db_table = "dreamreal"
       ```
       - Every model inherits from django.db.models.Model.
       - Our class has 2 attributes (2 CharField), those will be the table fields.
@@ -18,17 +25,12 @@
       ```sh
       python manage.py syncdb
       ```
-  - Or create Database and link with the Models
-      ```sh
-        CREATE TABLE myapp_person (
-        "id" serial NOT NULL PRIMARY KEY,
-        "first_name" varchar(30) NOT NULL,
-        "last_name" varchar(30) NOT NULL
-        );
-      ```
-## Note:
-  - The name of the table, myapp_person, is automatically derived from some model metadata but can be overridden.
-  - An id field is added automatically, but this behavior can be overridden. See Automatic primary key fields.
-  - The CREATE TABLE SQL in this example is formatted using PostgreSQL syntax, but it’s worth noting Django uses SQL tailored to the database backend specified in your settings file.
+## Manipulating Data (CRUD)   
+   -  **C** - Create
+   -  **R** - Read
+   -  **U** - Update
+   -  **D** - Delete
+     
+
    
    
