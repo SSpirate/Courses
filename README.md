@@ -1,2 +1,2 @@
-# :star1:Courses
+# :star2: Courses
   - Free Django Course for Absolute beginners.
